@@ -1,0 +1,54 @@
+//my variables
+@import "variables";
+
+//bootstrap
+@import "./bootstrap/bootstrap.scss";
+
+section {
+    padding-top: 100px;
+}
+
+.card-img-top {
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.portfolio-wrapper {
+    a {
+        display: block;
+        position: relative;
+
+        div {
+            display: none;
+            pointer-events: none;
+        }
+
+        &:hover {
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(100, 150, 250, 0.5);
+                z-index: 5;
+            }
+
+            div {
+                display: block;
+                position: fixed;
+                left: 15vw;
+                top: 10vh;
+                width: 70vw;
+                height: 80vh;
+                z-index: 1111;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
